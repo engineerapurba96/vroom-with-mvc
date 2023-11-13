@@ -1,8 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using vroom_with_mvc.AppDbContext;
+//DI Container or Services
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<VroomDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("mvcdemoconnectionstring")));
 
+
+//From Var app to app.Run(); is middlewares -it's  create client server relationship
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

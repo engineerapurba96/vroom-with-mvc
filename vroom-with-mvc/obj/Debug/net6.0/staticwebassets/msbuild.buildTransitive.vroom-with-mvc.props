@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\vroom-with-mvc.props" />
+</Project>
